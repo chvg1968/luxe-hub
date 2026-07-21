@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXE Properties — Hub</title>
+<meta name="description" content="Hub de herramientas internas de Luxe Properties PR">
+<style>
+  :root{
+    --naranja:#E8622C;
+    --coral:#D98A6E;
+    --arena:#E4B57F;
+    --negro:#111111;
+    --blanco:#FFFFFF;
+    --gris:#F4F2EE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--blanco);
+    color:var(--negro);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* ---------- HEADER ---------- */
+  header{
+    border-bottom:4px solid var(--negro);
+    padding:48px 24px 40px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    text-align:center;
+  }
+  .logo{width:150px;height:auto;}
+  .wordmark{
+    font-size:clamp(2.4rem,7vw,4.5rem);
+    font-weight:200;
+    letter-spacing:.35em;
+    text-indent:.35em;
+    color:var(--naranja);
+    line-height:1;
+  }
+  .wordmark small{
+    display:block;
+    font-size:.28em;
+    letter-spacing:.6em;
+    text-indent:.6em;
+    margin-top:10px;
+    color:var(--negro);
+    font-weight:300;
+  }
+  .tagline{
+    background:var(--negro);
+    color:var(--blanco);
+    font-size:.7rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    padding:8px 18px;
+  }
+  /* ---------- GRID ---------- */
+  main{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+  .section-label{
+    font-size:.75rem;
+    letter-spacing:.4em;
+    text-transform:uppercase;
+    margin:56px 0 24px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .section-label::after{
+    content:"";
+    flex:1;
+    height:2px;
+    background:var(--negro);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:8px;
+  }
+  .card{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:28px 24px;
+    text-decoration:none;
+    color:var(--negro);
+    background:var(--blanco);
+    transition:background .15s ease,color .15s ease,transform .1s ease;
+    min-height:130px;
+  }
+  .card:hover{
+    background:var(--naranja);
+    color:var(--blanco);
+  }
+  .card:hover .icon{color:var(--blanco);}
+  .card:hover .num{color:var(--blanco);}
+  .card:active{transform:scale(.985);}
+  .icon{
+    flex:0 0 64px;
+    width:64px;height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--naranja);
+    transition:inherit;
+  }
+  .icon svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .card-body h2{
+    font-size:1.05rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:6px;
+  }
+  .card-body p{
+    font-size:.85rem;
+    font-weight:300;
+    line-height:1.45;
+    opacity:.85;
+  }
+  .num{
+    margin-left:auto;
+    align-self:flex-start;
+    font-size:.7rem;
+    font-weight:700;
+    color:var(--naranja);
+    letter-spacing:.1em;
+  }
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:4px solid var(--negro);
+    background:var(--negro);
+    color:var(--blanco);
+    padding:32px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    gap:12px;
+    font-size:.7rem;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+  }
+  footer span b{color:var(--naranja);font-weight:700;}
+  @media(max-width:700px){
+    .grid{grid-template-columns:1fr;}
+    .card{min-height:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <!-- Logo: sand dollar -->
+  <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Luxe Properties">
+    <circle cx="100" cy="100" r="88" fill="#E4B57F" stroke="#C98A5E" stroke-width="2"/>
+    <g stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none" opacity=".95">
+      <path d="M100 30 C96 55 96 70 100 88"/>
+      <path d="M100 170 C104 145 104 130 100 112"/>
+      <path d="M33 78 C58 84 74 90 90 96"/>
+      <path d="M167 78 C142 84 126 90 110 96"/>
+      <path d="M55 155 C68 138 78 126 92 108"/>
+      <path d="M145 155 C132 138 122 126 108 108"/>
+    </g>
+    <circle cx="100" cy="100" r="7" fill="#FFFFFF"/>
+  </svg>
+  <h1 class="wordmark">LUXE<small>PROPERTIES</small></h1>
+  <div class="tagline">Hub Operacional · Puerto Rico</div>
+</header>
+
+<main>
+  <div class="section-label">Experiencia del Guest</div>
+  <div class="grid">
+
+    <a class="card" href="https://luxepropertiespr.info/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Brújula / concierge -->
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5z"/><circle cx="12" cy="12" r=".5" fill="currentColor"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Directorio de Servicios</h2>
+        <p>Gastronomía, yates, spa y transporte en Puerto Rico.</p>
+      </div>
+      <span class="num">01</span>
+    </a>
+
+    <a class="card" href="https://luxe-sms.netlify.app/login" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Chat -->
+        <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Chat Guest · Concierge</h2>
+        <p>Comunicación directa entre huéspedes y concierge.</p>
+      </div>
+      <span class="num">02</span>
+    </a>
+
+    <a class="card" href="https://guestpasses.netlify.app/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Pase / llave -->
+        <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="1"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/><circle cx="12" cy="13" r="2"/><path d="M12 15v2"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Guest Passes</h2>
+        <p>Agente de IA para la entrega de pases de acceso.</p>
+      </div>
+      <span class="num">03</span>
+    </a>
+
+    <a class="card" href="https://luxecontract.netlify.app/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Contrato / pluma -->
+        <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 14l6-6M9 17h6"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Contratos</h2>
+        <p>Contratos con guests independientes.</p>
+      </div>
+      <span class="num">04</span>
+    </a>
+
+  </div>
+
+  <div class="section-label">Golf Carts</div>
+  <div class="grid">
+
+    <a class="card" href="https://golf.luxepropertiespr.com/login" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Golf cart -->
+        <svg viewBox="0 0 24 24"><path d="M3 16h18"/><path d="M5 16V9h9l3 4h4v3"/><path d="M8 9V6h4v3"/><circle cx="8" cy="18.5" r="1.8"/><circle cx="17" cy="18.5" r="1.8"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Estado de Golf Carts</h2>
+        <p>Registro del estado de los golf carts para los guests.</p>
+      </div>
+      <span class="num">05</span>
+    </a>
+
+    <a class="card" href="https://golf-cart-waiver.netlify.app/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Firma / waiver -->
+        <svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 11h8"/><path d="M8 16c1.2-1.5 2 .8 3.2-.6 1-1.2 1.6.9 4.8.3"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Waiver Golf Cart</h2>
+        <p>Formulario de exoneración para el uso de golf carts.</p>
+      </div>
+      <span class="num">06</span>
+    </a>
+
+  </div>
+
+  <div class="section-label">Operaciones Internas</div>
+  <div class="grid">
+
+    <a class="card" href="https://luxereports.netlify.app/pages/login.html" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Inspección / lupa -->
+        <svg viewBox="0 0 24 24"><path d="M7 3h10v18H7z"/><path d="M10 7h4"/><circle cx="12" cy="13" r="2.6"/><path d="M14 15l2.4 2.4"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Reportes de Villas</h2>
+        <p>Reportes e inspecciones de las villas.</p>
+      </div>
+      <span class="num">07</span>
+    </a>
+
+    <a class="card" href="https://luxeaccount.netlify.app/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Factura -->
+        <svg viewBox="0 0 24 24"><path d="M6 3h12v18l-2-1.5L14 21l-2-1.5L10 21l-2-1.5L6 21z"/><path d="M9 8h6M9 11h6M9 14h4"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Facturas</h2>
+        <p>Formulario para el ingreso de facturas.</p>
+      </div>
+      <span class="num">08</span>
+    </a>
+
+    <a class="card" href="https://inventarioluxe.netlify.app/" target="_blank" rel="noopener">
+      <div class="icon" aria-hidden="true">
+        <!-- Lencería / inventario -->
+        <svg viewBox="0 0 24 24"><path d="M4 8h16v3H4zM5 11h14v3H5zM6 14h12v3H6z"/><path d="M4 8l2-3h12l2 3"/></svg>
+      </div>
+      <div class="card-body">
+        <h2>Inventario</h2>
+        <p>Lencería y amenities de las villas.</p>
+      </div>
+      <span class="num">09</span>
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <span><b>LUXE</b> PROPERTIES</span>
+  <span>Puerto Rico</span>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
